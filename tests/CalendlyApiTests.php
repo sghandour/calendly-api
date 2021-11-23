@@ -36,12 +36,12 @@ class CalendlyApiTest extends TestCase
 
     public function testEcho()
     {
-        $this->mockHandler->append(new Response(200, ['content-type' => 'application/json; charset=utf-8'], '{"email": "email@site.test"}'));
+        $this->mockHandler->append(new Response(200, ['content-type' => 'application/json; charset=utf-8'], '{"email": "sadek.ghandour@gmail.com"}'));
 
         $echo = $this->calendlyApi->echo();
 
         $this->assertTrue(isset($echo['email']));
-        $this->assertEquals('email@site.test', $echo['email']);
+        $this->assertEquals('sadek.ghandour@gmail.com', $echo['email']);
     }
 
     public function testInvalidJsonCalendlyApiException()
